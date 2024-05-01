@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -10,24 +11,31 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --dark-bg: 0, 0, 0;
+    --light-bg: 255, 255, 255;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.primaryDarkBg {
+  background-color: rgb(41 37 36);
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.primaryLightBg {
+  background-color: rgb(255, 255, 255);
+}
+.secondaryDarkBg {
+  background-color: rgb(87 83 78);
+}
+.secondaryLightBg {
+  background-color: rgb(212 212 212);
+}
+.primaryDarkText {
+  color: rgb(245 245 245);
+}
+.primaryLightText {
+  color: rgb(30 41 59);
+}
+.secondaryDarkText {
+  color: rgb(163 163 163);
+}
+.secondaryLightText {
+  color: rgb(82 82 82);
 }

@@ -1,0 +1,32 @@
+{
+    "endpoints": {
+        "local": "http://localhost:3000/",
+        "proxy": "http://localhost:4005/api/v1/",
+        "backend": "http://nocng.id.vn:9091/api/v1/"
+    },
+    "darkMode": true,
+    "navigation": {
+        "navbar": [
+            {
+                "title": "Home",
+                "screen": "/"
+            },
+            {
+                "title": "Blog",
+                "screen": "/blog"
+            },
+            {
+                "title": "Single Post",
+                "screen": "/blog/:id"
+            },
+            {
+                "title": "Contact",
+                "screen": "/contact"
+            },
+            {
+                "title": "Login",
+                "screen": "/login"
+            }
+        ]
+    }
+}
