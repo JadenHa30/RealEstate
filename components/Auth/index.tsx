@@ -4,7 +4,7 @@ import React from 'react';
 import { fetchAccess, selectAccount } from '@/lib';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { Formik } from 'formik';
-import { LoginField } from './LoginComponents';
+import { Input } from '../Input';
 import { loginTestId } from '@/utils/testId';
 import { Button } from '../Button';
 
@@ -40,9 +40,10 @@ export function LoginForm() {
         >
             {({ values, handleChange, handleSubmit }) => (
                 <form className="w-96 flex flex-col m-auto mt-80 mb-80" onSubmit={handleSubmit}>
-                    <LoginField 
+                    <Input 
                         title="Email"
                         htmlFor="login-email"
+                        require
                         type="email"
                         id={loginTestId.email}
                         name="email"
@@ -51,7 +52,7 @@ export function LoginForm() {
                         value={values.email}
                         onChange={handleChange}
                     />
-                    <LoginField 
+                    <Input 
                         title="Password"
                         htmlFor="login-password"
                         type="password"

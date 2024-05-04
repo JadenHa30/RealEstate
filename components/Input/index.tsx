@@ -1,8 +1,11 @@
+import { themeStyles } from '@/app/globalStyle';
 import React from 'react';
 
- type LoginLabelType = {
+ type InputType = {
+    containerStyle?: string,
     title: string,
     htmlFor: string,
+    require: boolean,
     type: string,
     id: string,
     name: string,
@@ -12,12 +15,12 @@ import React from 'react';
     onChange: (e: React.ChangeEvent<any>) => void,
 }
 
-export const LoginField = ({ title, htmlFor, type, id, name, style, placeholder, value, onChange }: LoginLabelType) => {
+export const Input = ({ title, htmlFor, require = false, type, id, name, style, placeholder, value, onChange, containerStyle }: InputType) => {
     return (
-       <div className="mb-6">
+       <div className={`mb-6 ${containerStyle}`}>
             <label
                 htmlFor={htmlFor}
-                className="block text-sm font-medium text-gray-700"
+                className={`${themeStyles.primaryText} block text-sm font-medium`}
             >
                 {title}
             </label>
@@ -25,7 +28,7 @@ export const LoginField = ({ title, htmlFor, type, id, name, style, placeholder,
                 type={type}
                 id={id}
                 name={name}
-                required
+                required={require}
                 className={style}
                 placeholder={placeholder}
                 value={value}
